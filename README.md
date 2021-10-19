@@ -48,13 +48,13 @@ get_map.py      # 根据上面的信息，计算TP，FP，Precision，Recall，F
 ```txt
 detection-results: dr_test1.txt,...,dr_testn.txt            # get_dr_txt.py 得到的结果，也就是网络检测结果
 	==>test1.txt: class1 0.9994 94 43 200 65				
-				  class1 0.7313 151 42 230 62
+		      class1 0.7313 151 42 230 62
 
 ground-truth: gt_test1.txt,...,gt_testn.txt  		    # get_gt_txt.py 得到的结果
 	==>test1.txt: class1 1 56 52 70                     # 这里有 4 个真实框对应的类别都是同一类别
-				  class1 51 51 124 67       # 注意：通常一个物体只会有一个真实框，这里为了方便讲解
-				  class1 219 41 300 60
-				  class1 124 45 219 63
+		      class1 51 51 124 67       # 注意：通常一个物体只会有一个真实框，这里为了方便讲解
+		      class1 219 41 300 60
+		      class1 124 45 219 63
 				  
 images-optional: test1.jpg,...,testn.jpg                    # test1.jpg 对应的类别就是class1
 ```
@@ -108,10 +108,10 @@ $$
 
 ```json
 test1_ground_truth.json:
-					[{"class_name": "class1", "bbox": "1 56 52 70", "used": false}, 
-     					 {"class_name": "class1", "bbox": "51 51 124 67", "used": false}, 
-     					 {"class_name": "class1", "bbox": "219 41 300 60", "used": false}, 
-     					 {"class_name": "class1", "bbox": "124 45 219 63", "used": false}]
+			 [{"class_name": "class1", "bbox": "1 56 52 70", "used": false}, 
+     		          {"class_name": "class1", "bbox": "51 51 124 67", "used": false}, 
+     			  {"class_name": "class1", "bbox": "219 41 300 60", "used": false}, 
+     			  {"class_name": "class1", "bbox": "124 45 219 63", "used": false},...]
 ```
 
 -------
@@ -156,7 +156,7 @@ for txt_file in ground_truth_files_list:
 
 ```json
 class1_dr.json:
-    		   [{"confidence": "1.0", "file_id": "test40", "bbox": "90 0 137 300"},
+    		[{"confidence": "1.0", "file_id": "test40", "bbox": "90 0 137 300"},
                 {"confidence": "0.9994", "file_id": "test7", "bbox": "94 43 200 65"},
                 {"confidence": "0.9994", "file_id": "test7", "bbox": "94 43 200 65"},
                 {"confidence": "1.0", "file_id": "test54", "bbox": "1 2 28 297"}, 
