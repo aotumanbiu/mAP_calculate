@@ -15,11 +15,11 @@
 ```
 --inputs:
 	--detection-results 				# 测试集对应的预测结果
-	--ground-truth 						# 测试集对应的真实标签
+	--ground-truth 					# 测试集对应的真实标签
 	--images-optional   				# 测试集 
 	
---scripts/extra:						# 下面的文件为
-	--README.md							# 详细介绍了下面文件的作用，这里不一一说明了
+--scripts/extra:					# 下面的文件为
+	--README.md					# 详细介绍了下面文件的作用，这里不一一说明了
 	--class_list.txt
 	--convert_dr_darkflow_json.py
 	--convert_dr_yolo.py
@@ -46,17 +46,17 @@ get_map.py      # 根据上面的信息，计算TP，FP，Precision，Recall，F
 数据示例：
 
 ```txt
-detection-results: dr_test1.txt,...,dr_testn.txt        # get_dr_txt.py 得到的结果，也就是网络检测结果
+detection-results: dr_test1.txt,...,dr_testn.txt            # get_dr_txt.py 得到的结果，也就是网络检测结果
 	==>test1.txt: class1 0.9994 94 43 200 65				
 				  class1 0.7313 151 42 230 62
 
 ground-truth: gt_test1.txt,...,gt_testn.txt  		    # get_gt_txt.py 得到的结果
 	==>test1.txt: class1 1 56 52 70                     # 这里有 4 个真实框对应的类别都是同一类别
-				  class1 51 51 124 67                   # 注意：通常一个物体只会有一个真实框，这里为了方便讲解
+				  class1 51 51 124 67       # 注意：通常一个物体只会有一个真实框，这里为了方便讲解
 				  class1 219 41 300 60
 				  class1 124 45 219 63
 				  
-images-optional: test1.jpg,...,testn.jpg                # test1.jpg 对应的类别就是class1
+images-optional: test1.jpg,...,testn.jpg                    # test1.jpg 对应的类别就是class1
 ```
 
 
@@ -108,7 +108,7 @@ $$
 
 ```json
 test1_ground_truth.json:
-						[{"class_name": "class1", "bbox": "1 56 52 70", "used": false}, 
+					[{"class_name": "class1", "bbox": "1 56 52 70", "used": false}, 
      					 {"class_name": "class1", "bbox": "51 51 124 67", "used": false}, 
      					 {"class_name": "class1", "bbox": "219 41 300 60", "used": false}, 
      					 {"class_name": "class1", "bbox": "124 45 219 63", "used": false}]
@@ -297,14 +297,14 @@ with open(output_files_path + "/output.txt", 'w') as output_file:
             # set minimum overlap
             min_overlap = MINOVERLAP  # MINOVERLAP=0.5
             
-        # -------------------------------------------------------------------------------------------------#
-        # 下面会有3种情况:                                                                                   #
-        # 		1. 最好的 IoU >= min_overlap，且最匹配的真实框没有被匹配过，也即是gt_match["used"]=false，则       #
-        #		   把它改为True，其相应索引位置的tp改为1，且status="MATCH!"。                                    #
-        #		2. 最好的 IoU >= min_overlap，但最匹配的真实框已被匹配过，也即是gt_match["used"]=True，则其相      #
-        #          应索引位置的 fp 改为1，且status="REPEATED MATCH!"。                                        #
-        #		3. 最好的 IoU < min_overlap，则其相应索引位置的 fp 改为1，且status = "INSUFFICIENT OVERLAP"。   #
-        # ----------------------------------------------------------------------------------------------- #
+        # ---------------------------------------------------------------------------------------------------------------- #
+        # 下面会有3种情况:                                                                                                  #
+        # 		1. 最好的 IoU >= min_overlap，且最匹配的真实框没有被匹配过，也即是gt_match["used"]=false，则         #
+        #		   把它改为True，其相应索引位置的tp改为1，且status="MATCH!"。                                        #
+        #		2. 最好的 IoU >= min_overlap，但最匹配的真实框已被匹配过，也即是gt_match["used"]=True，则其相        #
+        #          应索引位置的 fp 改为1，且status="REPEATED MATCH!"。                                                       #
+        #		3. 最好的 IoU < min_overlap，则其相应索引位置的 fp 改为1，且status = "INSUFFICIENT OVERLAP"。        #
+        # ----------------------------------------------------------------------------------------------------------------- #
             if ovmax >= min_overlap:
                 if "difficult" not in gt_match:  # 在我们的数据集，这个默认就是满足条件的
                         if not bool(gt_match["used"]):
@@ -363,7 +363,7 @@ with open(output_files_path + "/output.txt", 'w') as output_file:
 
 ```中间画图部分的动态演示过程：(这里就用了一个例子来说明)```
 
-<img src="./img/process.gif" style="zoom: 200%>
+<img src="./img/process.gif" style="zoom: 200%">
 
 ```最终结果：```
 
@@ -439,14 +439,14 @@ with open(output_files_path + "/output.txt", 'w') as output_file:
           prec.append(0.0)    # # 在列表最后面插入 0.0
           mpre = prec[:]
           
-      	# --------------------------------------------------------------------- #
-          # 这样做就是为了得到上图的棕色直线部分，得到的区域刚好包住 P R线                  #
+      	# ----------------------------------------------------------------------- #
+          # 这样做就是为了得到上图的棕色直线部分，得到的区域刚好包住 P R线          #
           # --------------------------------------------------------------------- #
           for i in range(len(mpre) - 2, -1, -1):  # 倒序枚举
               mpre[i] = max(mpre[i], mpre[i + 1]) # 当前点 = max(当前点, 后面的点)
       
           # --------------------------------------------------------------------- #
-          # 主要总用就是把上面的阴影区域分成若干个小矩形                                  #
+          # 主要总用就是把上面的阴影区域分成若干个小矩形                           #
           # --------------------------------------------------------------------- #
           i_list = []
           for i in range(1, len(mrec)):
@@ -454,7 +454,7 @@ with open(output_files_path + "/output.txt", 'w') as output_file:
                   i_list.append(i)
           
           # --------------------------------------------------------------------- #
-          # 数学上的积分                                                            #
+          # 数学上的积分                                                          #
           # --------------------------------------------------------------------- #
           ap = 0.0
           for i in i_list:
