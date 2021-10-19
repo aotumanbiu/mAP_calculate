@@ -363,7 +363,7 @@ with open(output_files_path + "/output.txt", 'w') as output_file:
 
 ```中间画图部分的动态演示过程：(这里就用了一个例子来说明)```
 
-<img src="./img/process.gif" style="zoom: 150%" />
+<img src="./img/process.gif" style="zoom: 200%>
 
 ```最终结果：```
 
@@ -389,19 +389,19 @@ with open(output_files_path + "/output.txt", 'w') as output_file:
 
       ​		**nd = len(dr_data)   # len(dr_data)为 对应类别为 class\* 的所有检测框数量**
       ​    	**tp = [0] * nd  # 创建一个长度为nd的列表**
-      ​        **fp = [0] * nd**
+      ​         **p = [0] * nd**
 
       ​		**for   _   in  len(class\*_dr.json)： # (len(class\*\_dr.json)，检测结果为 class\* 类的所有检测框)**
 
-      ​				**得到本检测框所属的图片名称**
+      ​			**得到本检测框所属的图片名称**
 
-      ​				**for obj in ground_truth_data：\# 所属图片的所有的真实框**
+      ​			**for obj in ground_truth_data：\# 所属图片的所有的真实框**
 
-      ​						**找到IOU最大的真实框**
+      ​				**找到IOU最大的真实框**
 
-      ​	     **判断最好的IOU是否 > min_overlap**
+      ​	     		**判断最好的IOU是否 > min_overlap**
 
-      ​						 **上述的三种情况**
+      ​				**上述的三种情况**
 
       ​		 **前几个检测框中有多少个tp和fp**
 
