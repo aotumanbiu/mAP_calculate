@@ -30,7 +30,7 @@
 	--intersect-gt-and-dr.py
 	--result.txt
 	
---main.py                               # 计算 TP，FP，Precision，Recall，F1，mAP
+--main.py                               		# 计算 TP，FP，Precision，Recall，F1，mAP
 ```
 
 ​		**但在这里因为某些的需要，我们采用 [bubbliiiing](https://github.com/bubbliiiing) 以前根据上述代码加以实现的代码来进行讲解，但是计算mAP的过程都是以一样的。他的代码主要包含三个文件：**
@@ -52,7 +52,7 @@ detection-results: dr_test1.txt,...,dr_testn.txt            # get_dr_txt.py 得�
 
 ground-truth: gt_test1.txt,...,gt_testn.txt  		    # get_gt_txt.py 得到的结果
 	==>test1.txt: class1 1 56 52 70                     # 这里有 4 个真实框对应的类别都是同一类别
-		      class1 51 51 124 67       # 注意：通常一个物体只会有一个真实框，这里为了方便讲解
+		      class1 51 51 124 67       	    # 注意：通常一个物体只会有一个真实框，这里为了方便讲解
 		      class1 219 41 300 60
 		      class1 124 45 219 63
 				  
