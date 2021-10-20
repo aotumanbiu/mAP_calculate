@@ -78,19 +78,16 @@ images-optional: test1.jpg,...,testn.jpg                    # test1.jpg 对应�
 
 
 ```Precosion: 通俗的讲，就是 --> 检测结果为正样本中，真正为正样本的所占比例 ```。
-$$
-Precision=\frac{TP}{TP+FP}
-$$
+
+<img src="./img/pre.png" style="zoom: 80%" />
 
 ```Recall: 通俗的讲，就是 --> 在所有正真为正样本的数据中，被检测出是正样本的比例。 ```
-$$
-Recall=\frac {TP} {TP+FN}
-$$
+
+<img src="./img/rec.png" style="zoom: 80%" />
 
 ```F1: 是统计学中用来衡量二分类（或多任务二分类）模型精确度的一种指标。它同时兼顾了分类模型的 Precosion 和 Recall。F1分数可以看作是模型准确率和召回率的一种加权平均，它的最大值是1，最小值是0，值越大意味着模型越好。   ```
-$$
-F1 = 2 * \frac {Precision*Recall} {Precision + Recall}
-$$
+
+<img src="./img/f1.png" style="zoom: 80%" />
 
 ##### **```AP 和 mAP 将会在后面的例子中详细说明```**
 
@@ -469,9 +466,8 @@ with open(output_files_path + "/output.txt", 'w') as output_file:
 
 
 ​	*** 所以 mAP：***
-$$
-mAP =\frac {class_1AP + class_2AP + ... + class_nAP} {n}
-$$
+
+<img src="./img/map.png" style="zoom: 80%" />
 
 
 
