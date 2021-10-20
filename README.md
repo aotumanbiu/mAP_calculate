@@ -77,17 +77,23 @@ images-optional: test1.jpg,...,testn.jpg                    # test1.jpg 对应�
 
 
 
-```Precosion: 通俗的讲，就是 --> 检测结果为正样本中，真正为正样本的所占比例 ```。
+```Precosion: 通俗的讲，就是 --> 检测结果为正样本中，真正为正样本的所占比例。 ```
 
+<div align=center>
 <img src="./img/pre.png" style="zoom: 80%" />
+</div>
 
 ```Recall: 通俗的讲，就是 --> 在所有正真为正样本的数据中，被检测出是正样本的比例。 ```
 
+<div align=center>
 <img src="./img/rec.png" style="zoom: 80%" />
+</div>
 
 ```F1: 是统计学中用来衡量二分类（或多任务二分类）模型精确度的一种指标。它同时兼顾了分类模型的 Precosion 和 Recall。F1分数可以看作是模型准确率和召回率的一种加权平均，它的最大值是1，最小值是0，值越大意味着模型越好。   ```
 
+<div align=center>
 <img src="./img/f1.png" style="zoom: 80%" />
+</div>
 
 ##### **```AP 和 mAP 将会在后面的例子中详细说明```**
 
@@ -364,12 +370,16 @@ with open(output_files_path + "/output.txt", 'w') as output_file:
 
 ```中间画图部分的动态演示过程：(这里就用了一个例子来说明)```
 
+<div align=center>
 <img src="./img/process.gif" style="zoom: 200%">
+</div>
 
 ```最终结果：```
+
 <div align=center>
 <img src="./img/test.jpg" style="zoom: 70%" />
 </div>
+
 ```Note：```
 
 ​			```蓝色框 --> 真实框；红色框 --> ft检测框；绿色框 --> tp检测框```
@@ -467,13 +477,14 @@ with open(output_files_path + "/output.txt", 'w') as output_file:
 
 ​	**所以 mAP：**
 
+<div align=center>
 <img src="./img/map.png" style="zoom: 80%" />
-
+</div>
 
 
 ### 推荐：
 
-[深度学习-目标检测评估指标P-R曲线、AP、mAP](https://blog.csdn.net/qq_41994006/article/details/81051150?depth_1-)
+[目标检测评估指标P-R曲线、AP、mAP](https://blog.csdn.net/qq_41994006/article/details/81051150?depth_1-)
 
-[睿智的目标检测2——mAP的概念_Bubbliiiing的学习小课堂-CSDN博客](https://blog.csdn.net/weixin_44791964/article/details/102414522)
+[睿智的目标检测2——mAP的概念](https://blog.csdn.net/weixin_44791964/article/details/102414522)
 
