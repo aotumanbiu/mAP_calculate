@@ -367,9 +367,9 @@ with open(output_files_path + "/output.txt", 'w') as output_file:
 <img src="./img/process.gif" style="zoom: 200%">
 
 ```最终结果：```
-
+<div align=center>
 <img src="./img/test.jpg" style="zoom: 70%" />
-
+</div>
 ```Note：```
 
 ​			```蓝色框 --> 真实框；红色框 --> ft检测框；绿色框 --> tp检测框```
