@@ -465,7 +465,7 @@ with open(output_files_path + "/output.txt", 'w') as output_file:
 
 
 
-​	*** 所以 mAP：***
+​	**所以 mAP：**
 
 <img src="./img/map.png" style="zoom: 80%" />
 
