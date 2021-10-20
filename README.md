@@ -433,8 +433,9 @@ with open(output_files_path + "/output.txt", 'w') as output_file:
       ​		对于 (2) 中的结果，最终我们每个类别都会得到一个PR曲线，也即说不同检测数量检测框对应的Precision和Recall的形成的图，这些值和 (2) 中 rec 和 prec 一致。如下图为某类别的PR曲线：
       
       
-      
+      <div align=center>
       <img src="./img/pr.jpg" style="zoom:70%;" />
+      </div>
       
       ```函数实现：```
       
